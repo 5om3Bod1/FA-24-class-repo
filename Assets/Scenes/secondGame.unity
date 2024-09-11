@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 147988163}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1113640056}
@@ -320,7 +320,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: 1885596576}
-  speed: 0.5
+  speed: 1
+  lockIn: {fileID: 1601915273}
+  lockOut: {fileID: 147988163}
+  move: 0
+  num: 0
 --- !u!4 &1113640056
 Transform:
   m_ObjectHideFlags: 0
@@ -364,7 +368,7 @@ Transform:
   m_GameObject: {fileID: 1601915273}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1113640056}
@@ -584,7 +588,7 @@ Transform:
   m_GameObject: {fileID: 1885596576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.5, y: 3.22, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
