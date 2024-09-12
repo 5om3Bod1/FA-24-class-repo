@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class targetBehavior : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class targetBehavior : MonoBehaviour
     public GameObject lockIn;
     public GameObject lockOut;
 
+    public int sceneTwo;
 
     public bool move;
     public int num;
@@ -18,8 +20,9 @@ public class targetBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("sceneSwap", 10f);
         Invoke("numGen", 2f);
+        Invoke("sceneSwap", 10f);
+        
     }
 
     // Update is called once per frame
@@ -30,21 +33,21 @@ public class targetBehavior : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, point.transform.position, speed * Time.deltaTime);
         }
-        
+        //
 
         if (num == 1)
         {
             Debug.Log(num);
             lockOut.SetActive(false);
             lockIn.SetActive(true);
-            Invoke("swap", 3f);
+            Invoke("swap", 4f);
         }
         if (num == 2)
         {
             Debug.Log(num);
             lockIn.SetActive(false);
             lockOut.SetActive(true);
-            Invoke("swip", 3f);
+            Invoke("swip", 4f);
         }
 
 
@@ -65,6 +68,7 @@ public class targetBehavior : MonoBehaviour
     }
     void sceneSwap()
     {
-        //Invsert Sceneswitch syntax
+        //Win
+        SceneManager.LoadScene(sceneTwo, LoadSceneMode.Single);
     }
 }

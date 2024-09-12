@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class onTarget : MonoBehaviour
 {
-    public int count;
+    public int sceneOne;
 
     private void OnMouseExit()
     {
-        //Makes sure player keeps mouse on the target
-        count++;
+        //Lose
+        SceneManager.LoadScene(sceneOne, LoadSceneMode.Single);
     }
 }
