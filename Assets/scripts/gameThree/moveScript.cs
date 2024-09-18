@@ -26,4 +26,9 @@ public class moveScript : MonoBehaviour
         //Lose
         SceneManager.LoadScene(sceneOne, LoadSceneMode.Single);
     }
+    private void OnMouseOVer()
+    {
+        //Lose
+        SceneManager.LoadScene(sceneOne, LoadSceneMode.Single);
+    }
 }

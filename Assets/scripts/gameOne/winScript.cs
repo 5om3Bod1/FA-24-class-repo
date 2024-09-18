@@ -12,9 +12,9 @@ public class winScript : MonoBehaviour
     private void Start()
     {
         Invoke("remove", 1f);
-        Invoke("swap", 11f);
-    }
+        Invoke("swap", 16f);
 
+    }
     private void remove()
     {
         bounds.SetActive(false);

@@ -8,9 +8,10 @@ public class offTarget : MonoBehaviour
     public int count;
     public int sceneOne;
 
+
     private void OnMouseOver()
     {
-        count++;
+        Invoke("plus", .5f);
     }
     private void OnMouseEnter()
     {
@@ -19,10 +20,14 @@ public class offTarget : MonoBehaviour
     }
     private void Update()
     {
-        if(count > 200)
+        if (count > 5)
         {
             //Lose
             SceneManager.LoadScene(sceneOne, LoadSceneMode.Single);
         }
+    }
+    void plus()
+    {
+        count++;
     }
 }

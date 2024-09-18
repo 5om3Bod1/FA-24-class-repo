@@ -18,7 +18,6 @@ public class openScene : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            Debug.Log("Hello World");
             SceneManager.LoadScene(gameOne, LoadSceneMode.Single);
         }
     }

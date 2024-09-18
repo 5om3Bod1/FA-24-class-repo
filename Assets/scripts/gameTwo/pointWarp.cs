@@ -18,7 +18,6 @@ public class pointWarp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(var);
         if (var == 1)
         {
             gameObject.transform.position = new Vector2(0f, 2.25f);

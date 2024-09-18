@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class controllerScript : MonoBehaviour
 {
     public int count;
     public GameObject round1;
     public GameObject round2;
+
+    public int sceneTwo;
 
     private void Start()
     {
@@ -35,6 +38,7 @@ public class controllerScript : MonoBehaviour
     }
     void swap()
     {
-        Debug.Log("Hi");
+        //Win
+        SceneManager.LoadScene(sceneTwo, LoadSceneMode.Single);
     }
 }

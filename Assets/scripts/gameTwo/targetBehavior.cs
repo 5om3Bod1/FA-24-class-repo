@@ -37,26 +37,21 @@ public class targetBehavior : MonoBehaviour
 
         if (num == 1)
         {
-            Debug.Log(num);
             lockOut.SetActive(false);
             lockIn.SetActive(true);
             Invoke("swap", 4f);
         }
         if (num == 2)
         {
-            Debug.Log(num);
             lockIn.SetActive(false);
             lockOut.SetActive(true);
             Invoke("swip", 4f);
         }
-
-
     }
     void numGen()
     {
         num = Random.Range(1, 3);
         move = true;
-        Debug.Log(num);
     }
     void swap()
     {
