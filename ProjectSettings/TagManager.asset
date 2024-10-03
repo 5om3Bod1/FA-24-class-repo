@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Slime
+    uniqueID: 1649034721
+    locked: 0
+  - name: Otter
+    uniqueID: 4080435145
+    locked: 0
