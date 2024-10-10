@@ -5,18 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class keyCheckW : MonoBehaviour
 {
-    GameObject bonk;
+    public GameObject bonk1;
+    public GameObject bonk2;
     public int sceneNum;
 
     void Update()
     {
         if (Input.GetKeyUp("w"))
         {
-            bonk.SetActive(true);
+            Invoke("keyW", .5f);
+            Invoke("restart", 1.25f);
+            
         }
-        else if (Input.anyKey)
+        else if (Input.GetKeyUp("s"))
         {
-            SceneManager.LoadScene(sceneNum, LoadSceneMode.Single);
+            Invoke("keyS",.5f);
+            Invoke("restart", 1.25f);
         }
+    }
+    void keyW()
+    {
+        bonk1.SetActive(true);
+        
+    }
+    void keyS()
+    {
+        bonk2.SetActive(true);
+    }
+    void restart()
+    {
+        SceneManager.LoadScene(sceneNum, LoadSceneMode.Single);
     }
 }

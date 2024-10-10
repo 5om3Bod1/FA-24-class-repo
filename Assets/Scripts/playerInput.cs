@@ -4,30 +4,33 @@ using UnityEngine;
 
 public class playerInput : MonoBehaviour
 {
-    GameObject compGen;
-
-    public GameObject[] objList;
-
-    public int num;
+    public GameObject compGen;
+    public GameObject keyCheck;
+    public bool choice;
 
     // Start is called before the first frame update
     void Start()
     {
-        num = Random.Range(0, 1);
+        keyCheck.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp("w"))
+        //Only can clicks on key and its locked in
+        if (!choice)
         {
-            compGen.SetActive(true);
-
-        }
-        else if (Input.GetKeyUp("s"))
-        {
-            compGen.SetActive(true);
-
+            if (Input.GetKeyUp("w"))
+            {
+                compGen.SetActive(true);
+                choice = true;
+            }
+            else if (Input.GetKeyUp("s"))
+            {
+                //compGen
+                compGen.SetActive(true);
+                choice = true;
+            }
         }
     }
 }

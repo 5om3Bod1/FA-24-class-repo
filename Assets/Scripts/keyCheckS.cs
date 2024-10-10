@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class keyCheckS : MonoBehaviour
 {
-    GameObject bonk;
+    public GameObject bonk;
     public int sceneNum;
 
     void Update()
