@@ -15,5 +15,13 @@ public class ripeTomato : MonoBehaviour
     private void OnMouseUp()
     {
         tomatoSize.sizeCheck();
+
+        StartCoroutine(spawnTomato());
+    }
+
+    IEnumerator spawnTomato()
+    {
+        yield return new WaitForSeconds(1f);
+
     }
 }
