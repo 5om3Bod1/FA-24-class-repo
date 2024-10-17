@@ -7,25 +7,26 @@ public class sprinklerScript : MonoBehaviour
     public barManager power;
     public GameObject barMgr;
 
-    public bool ticked;
+    public bool water;
     private void Awake()
     {
         power = barMgr.GetComponent<barManager>();
     }
     private void OnMouseUp()
     {
-        if (ticked)
+        if (water)
         {
+            //Not using power
             power.onPower = false;
-            ticked = false;
-            Debug.Log(ticked);
+            water = false;
+            Debug.Log(water);
         }
         else
         {
+            //Using power
             power.onPower = true;
-            ticked = true;
-            Debug.Log(ticked);
+            water = true;
+            Debug.Log(water);
         }
-        
     }
 }

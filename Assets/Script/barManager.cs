@@ -13,6 +13,14 @@ public class barManager : MonoBehaviour
 
     public Slider voidH;
 
+    public slimeScript slimeS;
+    public GameObject slimeC;
+
+    private void Awake()
+    {
+        slimeS = slimeC.GetComponent<slimeScript>();
+    }
+
     void Start()
     {
         StartCoroutine(slimeEvent());
@@ -22,23 +30,21 @@ public class barManager : MonoBehaviour
 
     private IEnumerator slimeEvent()
     {
-        if (onPlate)
+        yield return new WaitForSeconds(.5f);
+        if (slimeS.plate)
         {
             if (slimeE.value > 0)
             {
-                slimeE.value--;
-                powerS.value++;
-                yield return new WaitForSeconds(.5f);
+                slimeE.value-=3;
+                powerS.value+=4;
                 StartCoroutine(slimeEvent());
             }
         }
-        else if (!onPlate)
+        else if (!slimeS.plate)
         {
             if (slimeE.value == 0 || slimeE.value < 100)
             {
                 slimeE.value+=2;
-                
-                yield return new WaitForSeconds(.5f);
                 StartCoroutine(slimeEvent());
             }
         }
@@ -58,9 +64,9 @@ public class barManager : MonoBehaviour
         }
     }
         
-        private IEnumerator voidEvent()
+    private IEnumerator voidEvent()
     {
-        voidH.value--;
+        voidH.value-=3;
         yield return new WaitForSeconds(1f);
         StartCoroutine(voidEvent());
     }
