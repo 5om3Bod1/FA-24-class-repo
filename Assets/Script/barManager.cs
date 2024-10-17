@@ -65,9 +65,13 @@ public class barManager : MonoBehaviour
     }
         
     private IEnumerator voidEvent()
-    {
-        voidH.value-=3;
+    {   
         yield return new WaitForSeconds(1f);
+        voidH.value-=3;
+        if(voidH.value == 0)
+        {
+
+        }
         StartCoroutine(voidEvent());
     }
 }

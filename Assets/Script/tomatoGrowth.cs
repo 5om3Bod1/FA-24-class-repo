@@ -16,6 +16,8 @@ public class tomatoGrowth : MonoBehaviour
     public sprinklerScript sprinkler;
     public GameObject sprink;
 
+    public GameObject tomatoFall;
+
     private void Awake()
     {
         voidHunger = barMgr.GetComponent<barManager>();
@@ -56,10 +58,22 @@ public class tomatoGrowth : MonoBehaviour
     }
     public void sizeCheck()
     {
-        voidHunger.voidH.value += 10;
+        StartCoroutine(spawnTomato());
         tomatoInt = 0;
         tomatoStage[1].SetActive(false);
         tomatoStage[2].SetActive(false);
         tomatoStage[0].SetActive(true);
+        Invoke("bonk", 1.5f);
+    }
+    IEnumerator spawnTomato()
+    {
+        yield return new WaitForSeconds(.5f);
+        Instantiate(tomatoFall, new Vector3(-5f, 2f, -4.5f), Quaternion.identity);
+
+    }
+
+    void bonk()
+    {
+        voidHunger.voidH.value += 10;
     }
 }
