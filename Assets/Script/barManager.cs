@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class barManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class barManager : MonoBehaviour
 
     public slimeScript slimeS;
     public GameObject slimeC;
+
+    public int sceneNum;
 
     private void Awake()
     {
@@ -70,7 +73,7 @@ public class barManager : MonoBehaviour
         voidH.value-=3;
         if(voidH.value == 0)
         {
-
+            SceneManager.LoadScene(sceneNum, LoadSceneMode.Single);
         }
         StartCoroutine(voidEvent());
     }

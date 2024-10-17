@@ -27,7 +27,7 @@ public class slimeScript : MonoBehaviour
             //Down
             plateState[1].SetActive(false);
             plateState[0].SetActive(true);
-            gameObject.transform.position = new Vector3(4f, 1.03f, 0f);
+            gameObject.transform.position = new Vector3(4f, 1f, 0f);
             plate = true;
         }
         else if(plate)
