@@ -55,8 +55,14 @@ public class FirstPersonDrifter: MonoBehaviour
     private bool playerControl = false;
     private int jumpTimer;
     //private GameManager refer;
-    
- 
+
+    public static FirstPersonDrifter IInstnace { get; private set; }
+
+    private void Awake()
+    {
+        IInstnace = this;
+    }
+
     void Start()
     {
         //refer = GameManager.instance.GetComponent<GameManager>();

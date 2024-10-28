@@ -5,13 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Reset : MonoBehaviour
 {
+    public GameObject player;
     public int num;
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            SceneManager.LoadScene(num, LoadSceneMode.Single);
+            other.gameObject.GetComponent<playerRespawn>().respawnLocation();
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyUp("r"))
+        {
+            player.GetComponent<playerRespawn>().respawnLocation(); 
         }
     }
 }

@@ -9,6 +9,7 @@ public class sliderCollector : MonoBehaviour
     public Slider[] slider;
 
     public int num;
+    public bool game;
 
     public static sliderCollector IInstnace { get; private set; }
 
@@ -20,9 +21,13 @@ public class sliderCollector : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (!game)
         {
-            SceneManager.LoadScene(num, LoadSceneMode.Additive);
+            if (Input.GetKeyUp("space"))
+            {
+                game = true;
+                SceneManager.LoadScene(num, LoadSceneMode.Single);
+            }
         }
     }
 }
