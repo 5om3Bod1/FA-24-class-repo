@@ -1,21 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameState : MonoBehaviour
 {
     //5 hitboxes
     public GameObject[] hitBox;
-
     public int showBox;
 
-    private void Awake()
-    {
-        
-    }
     void Start()
     {
         StartCoroutine(appearBox());
+        Invoke("sceneSwap", 15f);
     }
     void stateChange()
     {          
@@ -29,12 +26,16 @@ public class gameState : MonoBehaviour
             hitBox[showBox].SetActive(true);
         }
     }
-
     IEnumerator appearBox()
     {
         stateChange();
         Debug.Log(showBox);
         yield return new WaitForSeconds(3f);
         StartCoroutine(appearBox());
+    }
+    void sceneSwap()
+    {
+        int num = 1;
+        SceneManager.LoadScene(num, LoadSceneMode.Single);
     }
 }

@@ -14,11 +14,11 @@ public class moveScript : MonoBehaviour
     {
         if (gameObject == block[0])
         {
-            Invoke("Boom", 7f);
+            Invoke("Boom", 9f);
         }
         else if (gameObject == block[1])
         {
-            Invoke("Boom", 11f);
+            Invoke("Boom", 13f);
         }
         
     }

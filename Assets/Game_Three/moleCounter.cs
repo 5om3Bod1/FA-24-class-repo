@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class moleCounter : MonoBehaviour
 {
-    public int num;
+    public int val = 5;
 
     public static moleCounter IInstnace { get; private set; }
 
@@ -13,13 +13,22 @@ public class moleCounter : MonoBehaviour
     {
         IInstnace = this;
     }
-
+    private void Start()
+    {
+        Invoke("sceneSwap", 15f);
+    }
     private void Update()
     {
-        if (num == 5)
+        if (val == 0)
         {
-            Debug.Log("Game Over");
-            //SceneManager.LoadScene(num, LoadSceneMode.Single);
+            gameStat.IInstnace.lifeVal--;
+            int num = 1;
+            SceneManager.LoadScene(num, LoadSceneMode.Single);
         }
+    }
+    void sceneSwap()
+    {
+        int num = 1;
+        SceneManager.LoadScene(num, LoadSceneMode.Single);
     }
 }

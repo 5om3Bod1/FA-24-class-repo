@@ -13,6 +13,7 @@ public class meteorSpawner : MonoBehaviour
         num = Random.Range(0, 3);
         Instantiate(form[num]);
         Invoke("shower", 3f);
+        Debug.Log(num);
     }
     void shower()
     {

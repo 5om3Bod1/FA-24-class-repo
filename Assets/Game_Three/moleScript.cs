@@ -26,18 +26,12 @@ public class moleScript : MonoBehaviour
             bonk[1].SetActive(true);
             speed = 3;
             transform.position = Vector3.MoveTowards(transform.position, downward.transform.position, speed * Time.deltaTime);
-        }
-        
-        if(transform.position == upward.transform.position)
-        {
-            moleCounter.IInstnace.num++;
-        }
+        }        
     }
-
     private void OnMouseUp()
     {
         hit = true;
-        int num = Random.Range(1, 4);
+        int num = Random.Range(1, 3);
         //Ramp changes the speed they come back
         Invoke("upwards", num);
     }

@@ -5,15 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class gameOver_Three : MonoBehaviour
 {
-    public int num;
-
+    private void Start()
+    {
+        Invoke("sceneSwap", 15f);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            Debug.Log("GameOver");
-            //SceneManager.LoadScene(num, LoadSceneMode.Single);
+            int num = 1;
+            gameStat.IInstnace.lifeVal--;
+            SceneManager.LoadScene(num, LoadSceneMode.Single);
         }
-        
+    }
+    void sceneSwap()
+    {
+        int num = 1;
+        SceneManager.LoadScene(num, LoadSceneMode.Single);
     }
 }

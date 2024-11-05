@@ -17,7 +17,6 @@ public class moleGen : MonoBehaviour
         for(moleNum = 0; moleNum <= 5; moleNum++)
         {
             mole[moleNum].SetActive(true);
-            Debug.Log(moleNum);
             yield return new WaitForSeconds(.5f);
         }
     }

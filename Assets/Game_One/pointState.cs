@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class pointState : MonoBehaviour
 {
@@ -19,26 +20,31 @@ public class pointState : MonoBehaviour
     }
     void Start()
     {
-        StartCoroutine(timer());
         StartCoroutine(numDrop());
     }
-
-    IEnumerator timer()
+    private void Update()
     {
         pointText.text = point.ToString();
-        yield return new WaitForSeconds(1);
-        StartCoroutine(timer());
+        if(point <= 0)
+        {
+            sceneSwap();
+        }
     }
     IEnumerator numDrop()
     {
         //Change the point decrease value to ramp so like 3-> 4 -> 5(max)
-        point-=3;
+        point-=5;
         yield return new WaitForSeconds(1);
         StartCoroutine(numDrop());
     }
-
     public void increase()
     {
         point++;
+    }
+    void sceneSwap()
+    {
+        int num = 1;
+        gameStat.IInstnace.lifeVal--;
+        SceneManager.LoadScene(num, LoadSceneMode.Single);
     }
 }
