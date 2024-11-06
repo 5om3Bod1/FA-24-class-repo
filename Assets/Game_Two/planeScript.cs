@@ -6,7 +6,6 @@ public class planeScript : MonoBehaviour
 {
     public float speed;
     Vector3 target;
-    bool moving;
     private Camera cam;
     public GameObject missle;
     public GameObject launch;
@@ -15,8 +14,10 @@ public class planeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //From tutorial on how to move object to mouse and I modified it so the plan can only move side to side
         cam = Camera.main;
         target = transform.position;
+        //
     }
 
     // Update is called once per frame
@@ -33,10 +34,12 @@ public class planeScript : MonoBehaviour
             }
         }
 
+        //From a tutorial 
         target = cam.ScreenToWorldPoint(Input.mousePosition);
         target.y = transform.position.y;
         target.z = transform.position.z;
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        //
     }
 
     void onCooldown()
