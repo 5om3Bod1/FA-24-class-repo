@@ -7,25 +7,30 @@ public class doorCondition : MonoBehaviour
 
     public GameObject[] doors;
     public static GameObject selectedDoor;
-    public static int doorNum;
 
     public GameObject[] winCon;
-    
 
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] roomLayout;
+
+    public static doorCondition IInstnace { get; private set; }
+
+    private void Awake()
     {
-        roomGenerator();
+        IInstnace = this;
     }
 
-    void roomGenerator()
+    public void roomGenerator()
     {
         //Select the location of the Wincon
         int winNum = Random.Range(0, 4);
         winCon[winNum].SetActive(true);
 
         //Select the location of the door
-        doorNum = Random.Range(0, 4);
+        int doorNum = Random.Range(0, 4);
         selectedDoor = doors[doorNum];
+
+        //Select the roomLayout
+        int roomNum = Random.Range(0, 4);
+        roomLayout[roomNum].SetActive(true);
     }
 }
