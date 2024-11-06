@@ -27,19 +27,33 @@ public class doorCondition : MonoBehaviour
         {
             if (item != winCon[winNum])
             {
-                Debug.Log("Hi");
                 item.SetActive(false);
             }
             winCon[winNum].SetActive(true);
-            Debug.Log(winNum);
         }
 
         //Select the location of the door
         int doorNum = Random.Range(0, 4);
-        selectedDoor = doors[doorNum];
+        Debug.Log(doorNum);
+        foreach (GameObject item in doors)
+        {
+            if (item != doors[doorNum])
+            {
+                doors[doorNum].SetActive(true);
+                item.SetActive(true);
+            }
+            selectedDoor = doors[doorNum];
+        }
 
         //Select the roomLayout
         int roomNum = Random.Range(0, 4);
-        roomLayout[roomNum].SetActive(true);
+        foreach (GameObject item in roomLayout)
+        {
+            if (item != roomLayout[roomNum])
+            {
+                item.SetActive(false);
+            }
+            roomLayout[roomNum].SetActive(true);
+        }
     }
 }
