@@ -9,7 +9,7 @@ public class winCondition : MonoBehaviour
         if(other.tag == "Player")
         {
             doorCondition.selectedDoor.SetActive(false);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

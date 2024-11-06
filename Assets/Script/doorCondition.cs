@@ -23,7 +23,16 @@ public class doorCondition : MonoBehaviour
     {
         //Select the location of the Wincon
         int winNum = Random.Range(0, 4);
-        winCon[winNum].SetActive(true);
+        foreach (GameObject item in winCon)
+        {
+            if (item != winCon[winNum])
+            {
+                Debug.Log("Hi");
+                item.SetActive(false);
+            }
+            winCon[winNum].SetActive(true);
+            Debug.Log(winNum);
+        }
 
         //Select the location of the door
         int doorNum = Random.Range(0, 4);
