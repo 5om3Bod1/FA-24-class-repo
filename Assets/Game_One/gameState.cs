@@ -21,9 +21,11 @@ public class gameState : MonoBehaviour
         {
             if (item != hitBox[showBox])
             {
+                Debug.Log("Hi");
                 item.SetActive(false);
             }
             hitBox[showBox].SetActive(true);
+            Debug.Log(showBox);
         }
     }
     IEnumerator appearBox()
