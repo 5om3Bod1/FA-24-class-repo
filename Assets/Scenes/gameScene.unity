@@ -142,7 +142,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!96 &43941860
 TrailRenderer:
   serializedVersion: 2
@@ -781,6 +781,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7692832622943664355, guid: bcd5d8af60b044344a6fbe77b67d8ba1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7692832622943664359, guid: bcd5d8af60b044344a6fbe77b67d8ba1, type: 3}
       propertyPath: gravity
       value: 7
